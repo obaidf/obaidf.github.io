@@ -31,11 +31,7 @@ dd{
 
 }
 
-dd, p{
 
-	text-indent: 0.5in;
-	font-size: 22px;
-}
 
 li{
 	font-size: 20px;
@@ -43,8 +39,8 @@ li{
 }
 
 p{
-	text-indent: 0.5in;
 	font-size: 22px;
+	text-indent: 0.5in;
 }
 
 div{
