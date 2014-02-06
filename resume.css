@@ -1,0 +1,59 @@
+
+background{
+	background-color: green;
+}
+
+body{
+		background-image: url(DSC_0703-001.jpg);
+		background-attachment: fixed;
+		background-position: top right;
+		background-repeat: no-repeat;
+		background-size: 25%;
+
+}
+
+h1{
+	font-size: 50px;
+}
+
+h2{
+	font-family: courier;
+
+}
+
+dt{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+dd{
+	font-size: 22px;
+
+}
+
+dd, p{
+
+	text-indent: 0.5in;
+	font-size: 22px;
+}
+
+li{
+	font-size: 20px;
+	text-indent: 0.5in;
+}
+
+p{
+	text-indent: 0.5in;
+	font-size: 22px;
+}
+
+div{
+	font-size: 20px;
+	word-wrap: normal;
+	text-indent: 1in;
+
+}
+
+#hey{
+	font-family: "Comic Sans MS"
+}
