@@ -17,7 +17,14 @@ h1{
 }
 
 h2{
-	font-family: courier;
+
+}
+
+h3{
+	font-size: 24px;
+}
+
+h4{
 
 }
 
@@ -30,6 +37,15 @@ dd{
 	font-size: 22px;
 
 }
+
+a{
+	font-size: 22px;
+}
+
+
+
+
+
 
 
 
