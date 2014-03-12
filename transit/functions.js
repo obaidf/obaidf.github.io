@@ -7,7 +7,7 @@ function startTheMap()
 						lat = position.coords.latitude;
 						lng = position.coords.longitude;
 						console.log("I got here");
-					}
+					});
 	}
 	else {
 		alert("Geolocation is not supported by your web browser. Please update or use a different browser.");
