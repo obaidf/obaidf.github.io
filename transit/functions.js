@@ -6,9 +6,9 @@ function drawMap()
 					navigator.geolocation.getCurrentPosition(function(position) {
 						lat = position.coords.latitude;
 						lng = position.coords.longitude;
-						renderMap();
+						//renderMap();
 					}
-				}
+	}
 	else {
 		alert("Geolocation is not supported by your web browser. Please update or use a different browser.");
 		lat = 0;
