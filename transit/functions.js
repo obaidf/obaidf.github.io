@@ -1,3 +1,7 @@
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
+
+
 function startTheMap()
 {
 	var lat;
