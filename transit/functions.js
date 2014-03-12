@@ -14,13 +14,25 @@ function startTheMap()
 		lng = 0;
 	}
 	
+	var me = new google.maps.LatLng(lat, lng);
+
 	var myOptions = {
 						zoom: 13, // The larger the zoom number, the bigger the zoom
+						center: me;
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
 
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-	me = new google.maps.LatLng(lat, lng);
+//	me = new google.maps.LatLng(lat, lng);
+
+	map.panTo(me);
+
+				// Create a marker
+				marker = new google.maps.Marker({
+					position: me,
+					title: "Here I Am!"
+				});
+				marker.setMap(map);
 
 	console.log("I got here too");
 
