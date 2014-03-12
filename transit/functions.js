@@ -6,7 +6,6 @@ function startTheMap()
 					navigator.geolocation.getCurrentPosition(function(position) {
 						lat = position.coords.latitude;
 						lng = position.coords.longitude;
-						console.log("I got here");
 					});
 	}
 	else {
@@ -17,7 +16,6 @@ function startTheMap()
 	
 	var myOptions = {
 						zoom: 13, // The larger the zoom number, the bigger the zoom
-						center: me,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
 
