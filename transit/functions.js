@@ -7,7 +7,7 @@ function drawMap()
 						lat = position.coords.latitude;
 						lng = position.coords.longitude;
 						renderMap();
-					};
+					}
 				}
 	else {
 		alert("Geolocation is not supported by your web browser. Please update or use a different browser.");
