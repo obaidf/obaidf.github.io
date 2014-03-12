@@ -4,7 +4,7 @@ function startTheMap()
 	var lng;
 
 
-	map = new google.maps.Map(document.getElementById("map_canvas")); //ssss
+	//map = new google.maps.Map(document.getElementById("map_canvas")); //ssss
 
 	if (navigator.geolocation) { 
 					navigator.geolocation.getCurrentPosition(function(position) {
