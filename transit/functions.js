@@ -33,7 +33,4 @@ function startTheMap()
 					title: "Here I Am!"
 				});
 				marker.setMap(map);
-
-	console.log("I got here too");
-
 }
