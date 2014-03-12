@@ -18,7 +18,7 @@ function startTheMap()
 
 	var myOptions = {
 						zoom: 13, // The larger the zoom number, the bigger the zoom
-						center: me;
+						center: me
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
 
