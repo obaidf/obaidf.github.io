@@ -25,7 +25,7 @@ function startTheMap()
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 //	me = new google.maps.LatLng(lat, lng);
 
-	map.panTo(me);
+	//map.panTo(me);
 
 				// Create a marker
 				marker = new google.maps.Marker({
