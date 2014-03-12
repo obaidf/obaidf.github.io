@@ -7,6 +7,7 @@ function drawMap()
 						lat = position.coords.latitude;
 						lng = position.coords.longitude;
 						//renderMap();
+						console.log("I got here")
 					}
 	}
 	else {
@@ -17,6 +18,9 @@ function drawMap()
 	
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	me = new google.maps.LatLng(lat, lng);
+
+							console.log("I got here too")
+
 
 
 }
