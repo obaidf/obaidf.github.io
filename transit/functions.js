@@ -1,4 +1,4 @@
-function drawMap()
+function startTheMap()
 {
 	var lat;
 	var lng;
@@ -6,7 +6,7 @@ function drawMap()
 					navigator.geolocation.getCurrentPosition(function(position) {
 						lat = position.coords.latitude;
 						lng = position.coords.longitude;
-						console.log("I got here")
+						console.log("I got here");
 					}
 	}
 	else {
@@ -18,8 +18,6 @@ function drawMap()
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	me = new google.maps.LatLng(lat, lng);
 
-	console.log("I got here too") 
-
-
+	console.log("I got here too");
 
 }
