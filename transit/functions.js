@@ -1,7 +1,3 @@
-
-<src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places">
-
-
 function startTheMap()
 {
 	var lat;
