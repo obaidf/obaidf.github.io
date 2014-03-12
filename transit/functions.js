@@ -6,7 +6,6 @@ function drawMap()
 					navigator.geolocation.getCurrentPosition(function(position) {
 						lat = position.coords.latitude;
 						lng = position.coords.longitude;
-						//renderMap();
 						console.log("I got here")
 					}
 	}
@@ -19,7 +18,7 @@ function drawMap()
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	me = new google.maps.LatLng(lat, lng);
 
-							console.log("I got here too")
+	console.log("I got here too") 
 
 
 
