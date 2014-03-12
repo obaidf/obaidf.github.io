@@ -13,6 +13,7 @@ function startTheMap()
 			var marker;
 			var infowindow = new google.maps.InfoWindow();
 			var places;
+			init();
 
 			function init()
 			{
