@@ -24,13 +24,12 @@ function startTheMap()
 	xhr.onreadystatechange = dataReady();
 	xhr.send(null); //Go! Execute!
 
-	console.log("Yay!!!")
 
 
 			function init()
 			{
-				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				getMyLocation();
+				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			}
 
 			function getMyLocation()
