@@ -27,16 +27,13 @@ function startTheMap()
 	console.log("Yay!!!")
 
 
-function init()
-			init();
-
 			function init()
 			{
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				getMyLocation();
 			}
 
-function getMyLocation()
+			function getMyLocation()
 			{
 				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 					navigator.geolocation.getCurrentPosition(function(position) {
@@ -50,7 +47,7 @@ function getMyLocation()
 				}
 			}
 
-function renderMap()
+			function renderMap()
 			{
 				me = new google.maps.LatLng(myLat, myLng);
 
@@ -80,7 +77,7 @@ function renderMap()
 				//service.search(request, callback);
 			}
 
-function createMarker(place)
+			function createMarker(place)
 			{
 				var placeLoc = place.geometry.location;
 				var marker = new google.maps.Marker({
