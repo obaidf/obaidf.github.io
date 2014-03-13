@@ -15,8 +15,9 @@ function startTheMap()
 			var places;
 			var xhr;
 
-			init();
-
+			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+			getMyLocation();
+			
 			xhr = new XMLHttpRequest();
 	//xhr.open("method", "url", asynchronous? true or false);
 	xhr.open("GET", "http://mbta.herokuapp.com/mapper/rodeo.json", true);
@@ -27,11 +28,9 @@ function startTheMap()
 	console.log("Yay!!!")
 
 }
-function init()
-			{
-				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-				getMyLocation();
-			}
+
+				
+		
 
 function getMyLocation()
 			{
@@ -101,9 +100,6 @@ function createMarker(place)
 
 	
 
-
-}
-
 function dataReady(){
 	if (xhr.readystate==4 && xhr.status == 200){
 	console.log("DONE!")
@@ -114,7 +110,7 @@ function dataReady(){
 	//for the assigment can get away with 500 status code else do an "else statement" to catch this error}
 
 
-
+}
 
 
 
