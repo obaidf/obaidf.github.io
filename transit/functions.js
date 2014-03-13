@@ -48,7 +48,8 @@ function startTheMap()
 				//scheduleDom = document.getElementById("schedule");
 				//scheduleDom.innerHTML = scheduleData["line"];
 
-				console.log(scheduleData['line']);
+				alert(scheduleData['line']);
+				console.log("got here");
 			}
 			else if (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
