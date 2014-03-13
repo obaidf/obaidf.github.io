@@ -3,7 +3,7 @@ function startTheMap()
 			var myLat = 0;
 			var myLng = 0;
 			var request = new XMLHttpRequest();
-			var me; //= new google.maps.LatLng(myLat, myLng);
+			var me; 
 			var myOptions = {
 						zoom: 13, // The larger the zoom number, the bigger the zoom
 						center: me,
@@ -17,8 +17,8 @@ function startTheMap()
 
 			init();
 			getSched();
-
 			//var stations = JSON.parse(./trains.json);
+
 
 
 
@@ -32,6 +32,8 @@ function startTheMap()
 			// ...handle the response
 			xhr.onreadystatechange = dataReady;
 			xhr.send(null); // Go! Execute!
+
+
 		}
 
 		function dataReady() {
@@ -43,8 +45,10 @@ function startTheMap()
 			// 4 = Complete
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				scheduleData = JSON.parse(xhr.responseText);
-				scheduleDom = document.getElementById("schedule");
-				scheduleDom.innerHTML = scheduleData["line"];
+				//scheduleDom = document.getElementById("schedule");
+				//scheduleDom.innerHTML = scheduleData["line"];
+
+				console.log(scheduleData['line']);
 			}
 			else if (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
@@ -69,25 +73,25 @@ function startTheMap()
 						//renderMap();
 						me = new google.maps.LatLng(myLat, myLng);
 
-				// Update map and go there...
-				map.panTo(me);
+						// Update map and go there...
+						map.panTo(me);
 
-				// Create a marker
-				marker = new google.maps.Marker({
-					position: me,
-					title: "Here I Am!"
-				});
-				marker.setMap(map);
+						// Create a marker
+						marker = new google.maps.Marker({
+						position: me,
+						title: "Here I Am!"
+						});
+						marker.setMap(map);
 
-				// Open info window on click of marker
-				google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
-				});
+						// Open info window on click of marker
+						google.maps.event.addListener(marker, 'click', function() {
+							infowindow.setContent(marker.title);
+							infowindow.open(map, marker);
+						});
 					});
 				}
 				else {
-					alert("Geolocation is not supported by your web browser.  What a shame!");
+					alert("Geolocation is not supported by your web browser. Upgrade or use a different browser!");
 				}
 			}
 
