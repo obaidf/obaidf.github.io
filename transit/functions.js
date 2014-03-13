@@ -66,6 +66,7 @@ function startTheMap()
 
 				alert(scheduleData['line']);
 				alert(scheduleData['schedule'][0]['Destination']);
+				console.log("huha!");
 			}
 			else if (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
