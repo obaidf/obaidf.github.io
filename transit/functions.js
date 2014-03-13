@@ -15,7 +15,7 @@ function startTheMap()
 			var places;
 			var xhr;
 
-			init(myOptions);
+			init();
 
 			xhr = new XMLHttpRequest();
 	//xhr.open("method", "url", asynchronous? true or false);
