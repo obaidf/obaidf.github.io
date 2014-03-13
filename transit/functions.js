@@ -14,7 +14,7 @@ function startTheMap()
 			var infowindow = new google.maps.InfoWindow();
 			var places;
 			init();
-
+}
 			function init()
 			{
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
@@ -27,11 +27,11 @@ function startTheMap()
 					navigator.geolocation.getCurrentPosition(function(position) {
 						myLat = position.coords.latitude;
 						myLng = position.coords.longitude;
-						renderMap();
+						renderMap(); 
 					});
 				}
 				else {
-					alert("Geolocation is not supported by your web browser.  What a shame!");
+					alert("Geolocation is not supported by your web browser.  Upgrade your browser or use a different one.");
 				}
 			}
 
@@ -55,14 +55,14 @@ function startTheMap()
 					infowindow.open(map, marker);
 				});
 
-				// Calling Google Places API
+				/* Calling Google Places API
 				var request = {
 					location: me,
 					radius: '500',
 					types: ['food']
 				};
 				service = new google.maps.places.PlacesService(map);
-				//service.search(request, callback);
+				//service.search(request, callback); */
 			}
 
 			function createMarker(place)
@@ -78,9 +78,8 @@ function startTheMap()
 					infowindow.setContent(place.name);
 					infowindow.open(map, this);
 				});
-      }
+      		}
 
-}
 
 
 
