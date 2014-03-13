@@ -37,7 +37,7 @@ function startTheMap()
 				//scheduleDom.innerHTML = scheduleData["line"];
 
 				alert(scheduleData['line']);
-				console.log("got here");
+				alert(scheduleData['schedule'][0]['Destination']);
 			}
 			else if (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
@@ -50,29 +50,6 @@ function startTheMap()
 			xhr.send(null); // Go! Execute!
 
 
-		}
-
-		function dataReady() {
-			// The readyState numbers:
-			// 0 = not initialized
-			// 1 = Set up
-			// 2 = Sent
-			// 3 = In progress
-			// 4 = Complete
-			if (xhr.readyState == 4 && xhr.status == 200) {
-				scheduleData = JSON.parse(xhr.responseText);
-				//scheduleDom = document.getElementById("schedule");
-				//scheduleDom.innerHTML = scheduleData["line"];
-
-				alert(scheduleData['line']);
-				alert(scheduleData['schedule'][0]['Destination']);
-				console.log("huha!");
-			}
-			else if (xhr.readyState == 4 && xhr.status == 500) {
-				scheduleDom = document.getElementById("schedule");
-				scheduleDom.innerHTML = alert("Error retrieving data, please refresh the page.")
-
-			}
 		}
 
 
