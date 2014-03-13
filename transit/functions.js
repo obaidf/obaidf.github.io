@@ -15,9 +15,8 @@ function startTheMap()
 			var places;
 			var xhr;
 
-			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-			getMyLocation();
-			
+			init(myOptions);
+
 			xhr = new XMLHttpRequest();
 	//xhr.open("method", "url", asynchronous? true or false);
 	xhr.open("GET", "http://mbta.herokuapp.com/mapper/rodeo.json", true);
@@ -28,9 +27,11 @@ function startTheMap()
 	console.log("Yay!!!")
 
 }
-
-				
-		
+function init()
+			{
+				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				getMyLocation();
+			}
 
 function getMyLocation()
 			{
