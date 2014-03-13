@@ -65,7 +65,7 @@ function startTheMap()
 				//scheduleDom.innerHTML = scheduleData["line"];
 
 				alert(scheduleData['line']);
-				console.log("got here");
+				alert(scheduleData['schedule'][0]['Destination']);
 			}
 			else if (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
