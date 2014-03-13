@@ -1,7 +1,7 @@
 function startTheMap()
 {
-			var myLat = 0;
-			var myLng = 0;
+			var myLat = 42;
+			var myLng = -71;
 			var request = new XMLHttpRequest();
 			var me = new google.maps.LatLng(myLat, myLng);
 			var myOptions = {
