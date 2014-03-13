@@ -18,7 +18,7 @@ function startTheMap()
 			init();
 			getSched();
 
-			var stations = JSON.parse(trains.json);
+			var stations = JSON.parse(./trains.json);
 
 
 
