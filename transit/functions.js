@@ -3,7 +3,7 @@ function startTheMap()
 			var myLat = 0;
 			var myLng = 0;
 			var request = new XMLHttpRequest();
-			var me = new google.maps.LatLng(myLat, myLng);
+			var me; //= new google.maps.LatLng(myLat, myLng);
 			var myOptions = {
 						zoom: 13, // The larger the zoom number, the bigger the zoom
 						center: me,
@@ -32,7 +32,6 @@ function startTheMap()
 			// ...handle the response
 			xhr.onreadystatechange = dataReady;
 			xhr.send(null); // Go! Execute!
-			alert("Yaye!");
 		}
 
 		function dataReady() {
