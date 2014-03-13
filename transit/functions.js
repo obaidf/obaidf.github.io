@@ -16,11 +16,14 @@ function startTheMap()
 			var xhr;
 
 			init();
+			getSched();
+
+			var stations = JSON.parse(trains.json);
 
 
-			var xhr;
 
-		function init() {
+
+		function getSched() {
 			xhr = new XMLHttpRequest();
 			xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); // this is possible because of cross-origin resource sharing (CORS) enabled for web application
 
@@ -29,6 +32,7 @@ function startTheMap()
 			// ...handle the response
 			xhr.onreadystatechange = dataReady;
 			xhr.send(null); // Go! Execute!
+			alert("Yaye!");
 		}
 
 		function dataReady() {
@@ -49,23 +53,6 @@ function startTheMap()
 
 			}
 		}
-
-
-
-			/*//var stations = JSON.parse(trains.json);
-		
-			xhr = new XMLHttpRequest();
-
-			//xhr.withCredentials = true
-			//Access-Control-Allow-Credentials:true; //Origin: "http://mbta.herokuapp.com/mapper/rodeo.json"
-
-	//xhr.open("method", "url", asynchronous? true or false);
-	xhr.open("GET", "http://mbta.herokuapp.com/mapper/rodeo.json", true);
-	//onreadystatechange has to be set to a function when request is completed to handle the response
-	xhr.onreadystatechange = dataReady();
-	xhr.send(null); //Go! Execute!*/
-
-
 
 
 			function init()
