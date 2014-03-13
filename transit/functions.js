@@ -25,12 +25,28 @@ function startTheMap()
 
 		function getSched() {
 			xhr = new XMLHttpRequest();
-			xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); // this is possible because of cross-origin resource sharing (CORS) enabled for web application
 
 			// onreadystatechange has to be set to a...
 			// ...function when request is completed, to...
 			// ...handle the response
-			xhr.onreadystatechange = dataReady;
+			//xhr.onreadystatechange = dataReady;
+			xhr.onreadystatechange = function(){
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				scheduleData = JSON.parse(xhr.responseText);
+				//scheduleDom = document.getElementById("schedule");
+				//scheduleDom.innerHTML = scheduleData["line"];
+
+				alert(scheduleData['line']);
+				console.log("got here");
+			}
+			else if (xhr.readyState == 4 && xhr.status == 500) {
+				scheduleDom = document.getElementById("schedule");
+				scheduleDom.innerHTML = alert("Error retrieving data, please refresh the page.")
+
+			}
+			}
+			xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); // this is possible because of cross-origin resource sharing (CORS) enabled for web application
+
 			xhr.send(null); // Go! Execute!
 
 
