@@ -124,8 +124,6 @@ function startTheMap()
 					alert("Geolocation is not supported by your web browser. Upgrade or use a different browser!");
 				}
 
-
-
 				for (i = 0; i < all_stations.length; i++) {
 					console.log(scheduleData['line']);
 					console.log(all_stations[i]['Line']);
@@ -134,8 +132,9 @@ function startTheMap()
 								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
 								var marker = new google.maps.Marker({
 								//map: map,
-								position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng'])
-								//icon:'./T_marker.png'
+								position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']),
+								icon:'./T_marker.png',
+								title: all_stations[i]['Station']
 								});
 							marker.setMap(map);
 							}
