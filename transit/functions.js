@@ -74,7 +74,7 @@ function startTheMap()
 
 			init();
 			getSched();
-			draw_polyLines();
+			//draw_polyLines();
 
 		function draw_polyLines()
 		{
@@ -191,7 +191,29 @@ function startTheMap()
 			xhr.send(null); // Go! Execute!
 
 
-						draw_polyLines();
+
+
+
+
+
+			for (i = 0; i < all_stations.length; i++) {
+				console.log(color);
+
+				if (((i + 1) < all_stations.length) && (all_stations[i]['Line'] == color) && (all_stations[i+1]['Line'] == color)) {
+					var pathcoords = [
+    					new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
+   						new google.maps.LatLng(all_stations[i+1]['lat1'], all_stations[i+1]['lng1'] ),];
+    				var T_path = new google.maps.Polyline({
+      					path: pathcoords,
+   						strokeColor: "#FF0000",
+   				   	 	strokeOpacity: 1.0,
+      					strokeWeight: 2
+   					 	});
+    				T_Path.setMap(map); 
+				}
+			}
+
+
 
 		}
 }
