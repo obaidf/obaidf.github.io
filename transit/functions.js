@@ -69,7 +69,7 @@ function startTheMap()
 			var places;
 			var xhr;
 			var markers = [];
-			var color = "";
+			var color;  // = "";
 
 
 			init();
@@ -169,6 +169,26 @@ function startTheMap()
 
 							markers.push(marker1);
 
+
+
+							if (((i + 1) < all_stations.length) && (all_stations[i+1]['Line'] == scheduleData['line'])) {
+								var pathcoords = [
+    								new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
+   									new google.maps.LatLng(all_stations[i+1]['lat1'], all_stations[i+1]['lng1'] ),];
+    							var T_path = new google.maps.Polyline({
+      							path: pathcoords,
+   								strokeColor: "#FF0000",
+   				   	 			strokeOpacity: 1.0,
+      							strokeWeight: 2
+   					 			});
+    						T_Path.setMap(map); 
+							}
+						}
+
+
+
+
+
 							}
 						}
 						for (a =0; a < markers.length; a++){
@@ -196,7 +216,7 @@ function startTheMap()
 
 
 
-
+/*
 			for (i = 0; i < all_stations.length; i++) {
 				//console.log("yeah m n");
 
@@ -213,7 +233,7 @@ function startTheMap()
     				T_Path.setMap(map); 
 				}
 			}
-
+*/
 
 
 		}
