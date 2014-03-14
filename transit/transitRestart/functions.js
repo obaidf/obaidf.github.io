@@ -93,10 +93,12 @@ function init()
 
 function getMyLocation()
 {
+	console.log("just got in getMyLocation");
 	if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 		navigator.geolocation.getCurrentPosition(function(position) {
 			myLat = position.coords.latitude;
 			myLng = position.coords.longitude;
+			console.log("About to call renderMap");
 			renderMap();
 			console.log("Rendered map");
 			
