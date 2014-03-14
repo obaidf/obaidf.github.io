@@ -113,7 +113,7 @@ function startTheMap()
 			//xhr.onreadystatechange = dataReady;
 			xhr.onreadystatechange = function(){
 			if (xhr.readyState == 4 && xhr.status == 200) {
-				scheduleData = JSON.parse(xhr.responseText);
+				var scheduleData = JSON.parse(xhr.responseText);
 				//scheduleDom = document.getElementById("schedule");
 				//scheduleDom.innerHTML = scheduleData["line"];
 
