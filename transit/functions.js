@@ -75,7 +75,7 @@ function startTheMap()
 			init();
 			getSched();
 			//draw_polyLines();
-			console.log(color);
+			alert(color);
 
 		function draw_polyLines()
 		{
