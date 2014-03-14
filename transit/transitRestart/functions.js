@@ -138,7 +138,6 @@ function getSched()
 					});
 					markers.push(marker1);
 					marker1.setMap(map);
-					markers.push(marker1);
 
 					//add listener
 					google.maps.event.addListener(marker1, 'click', function() {
