@@ -76,7 +76,6 @@ function startTheMap()
 
 function init()
 {
-	getMyLocation();
 	var myOptions = {
 		zoom: 13, // The larger the zoom number, the bigger the zoom
 		center: me,
@@ -84,6 +83,9 @@ function init()
 	};
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	var infowindow = new google.maps.InfoWindow();
+
+	getMyLocation();
+
 
 }
 
@@ -94,6 +96,7 @@ function getMyLocation()
 			myLat = position.coords.latitude;
 			myLng = position.coords.longitude;
 			renderMap();
+			console.log("Rendered map");
 			
 			/*me = new google.maps.LatLng(myLat, myLng);
 			// Update map and go there...
