@@ -137,12 +137,13 @@ function startTheMap()
 								title: all_stations[i]['Station']
 								});
 								markers.push(marker);
-							markers[i].setMap(map);
+							marker.setMap(map);
 
-							google.maps.event.addListener(markers[i], 'click', function() {
-							infowindow.setContent(markers[i].title);
-							infowindow.open(map, markers[i]);
+							google.maps.event.addListener(marker, 'click', function() {
+							infowindow.setContent(marker.title);
+							infowindow.open(map, marker);
 				});
+							markers.push(marker);
 
 							}
 						}
