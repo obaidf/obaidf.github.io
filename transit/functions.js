@@ -236,7 +236,7 @@ function startTheMap()
 */
 
 
-		}
+		
 }
 
 
