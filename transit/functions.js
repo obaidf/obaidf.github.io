@@ -106,100 +106,74 @@ function startTheMap()
 		function getSched() {
 
 			xhr = new XMLHttpRequest();
-
-			// onreadystatechange has to be set to a...
-			// ...function when request is completed, to...
-			// ...handle the response
-			//xhr.onreadystatechange = dataReady;
 			xhr.onreadystatechange = function(){
 			if (xhr.readyState == 4 && xhr.status == 200) {
 				var scheduleData = JSON.parse(xhr.responseText);
-				//scheduleDom = document.getElementById("schedule");
-				//scheduleDom.innerHTML = scheduleData["line"];
-
-				//alert(scheduleData['schedule'][0]['Destination']);
-				//draw_stations(scheduleData['line']);
+			
 				color = scheduleData['line'];
 
 				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 					navigator.geolocation.getCurrentPosition(function(position) {
 						myLat = position.coords.latitude;
 						myLng = position.coords.longitude;
-						//renderMap();
 						me = new google.maps.LatLng(myLat, myLng);
 
-						// Update map and go there...
 						map.panTo(me);
-
-
-						// Create a marker
+							// Create a marker
 						marker = new google.maps.Marker({
-						position: me,
-						title: "Here I Am!"
+							position: me,
+							title: "Here I Am!"
 						});
 						marker.setMap(map);
 
-						// Open info window on click of marker
+							// Open info window on click of marker
 						google.maps.event.addListener(marker, 'click', function() {
 							infowindow.setContent(marker.title);
 							infowindow.open(map, marker);
 						});
 					});
-
 				}
 				else {
 					alert("Geolocation is not supported by your web browser. Upgrade or use a different browser!");
 				}
 				markers = [];
 				for (i = 0; i < all_stations.length; i++) {
-							if (all_stations[i]['Line'] == color) {
-								//draw_station(all_stations[i]);
-								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
-								marker1 = new google.maps.Marker({
-								//map: map,
-								position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']),
-								//icon:'./T_marker.png',
-								title: all_stations[i]['Station']
-								});
-								markers.push(marker1);
-	
-							marker1.setMap(map);
+					
+					if (all_stations[i]['Line'] == color) {
+						marker1 = new google.maps.Marker({
+							position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']),
+							//icon:'./T_marker.png',
+							title: all_stations[i]['Station']
+							});
+						markers.push(marker1);
+						marker1.setMap(map);
+						markers.push(marker1);
 
-							markers.push(marker1);
+						//add listener
+						google.maps.event.addListener(marker1, 'click', function() {
+							infowindow.setContent(marker1.title);
+							infowindow.open(map, marker1);
 
-
-
-
-							google.maps.event.addListener(marker1, 'click', function() {
-								infowindow.setContent(markers[i].title);
-								infowindow.open(map, marker1);
-
-								console.log(markers[i].title);
-								console.log("NANANANANANA");
-
-
-
-							if (((i + 1) < all_stations.length) && (all_stations[i+1]['Line'] == scheduleData['line'])) {
-								var pathcoords = [
-    								new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
-   									new google.maps.LatLng(all_stations[i+1]['Lat'], all_stations[i+1]['Lng'] ),];
-    							var T_path = new google.maps.Polyline({
-      								path: pathcoords,
-   									strokeColor: "#FF0000",
-   				   	 				strokeOpacity: 1.0,
-      								strokeWeight: 2
-   					 				});
-
-    							T_path.setMap(map); 
-							}
+							console.log(marker1.title);
+							console.log("NANANANANANA");
 						}
+						
 
-
-
-
-
-							
-						//}} ?
+						if (((i + 1) < all_stations.length) && (all_stations[i+1]['Line'] == scheduleData['line'])) {
+							var pathcoords = [
+    							new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
+   								new google.maps.LatLng(all_stations[i+1]['Lat'], all_stations[i+1]['Lng'] ),];
+    						var T_path = new google.maps.Polyline({
+      							path: pathcoords,
+   								strokeColor: "#FF0000",
+   				   	 			strokeOpacity: 1.0,
+      							strokeWeight: 2
+   					 			});
+    						T_path.setMap(map); 
+						}
+					}	
+				}	
+			
 
 						/*for (a =0; a < markers.length; a++){
 							google.maps.event.addListener(markers[i], 'click', function() {
@@ -210,18 +184,17 @@ function startTheMap()
 								//console.log(markers[i].position.Lat);
 							});
 						}*/
-			}
-			if (xhr.readyState == 4 && xhr.status == 500) {
+			//}
+
+			else (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
 				scheduleDom.innerHTML = alert("Error retrieving data, please refresh the page.")
-
-				}
 			}
+		
 			xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); // this is possible because of cross-origin resource sharing (CORS) enabled for web application
-
 			xhr.send(null); // Go! Execute!
-
-
+			
+		}
 
 
 
