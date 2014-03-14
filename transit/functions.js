@@ -76,6 +76,8 @@ function startTheMap()
 			
 
 		function getSched() {
+
+			getMyLocation();
 			xhr = new XMLHttpRequest();
 
 			// onreadystatechange has to be set to a...
@@ -151,7 +153,7 @@ for (i = 0; i < all_stations.length; i++) {
 		}
 			function init()
 			{
-				getMyLocation();
+				//getMyLocation();
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			}
 
@@ -199,19 +201,6 @@ for (i = 0; i < all_stations.length; i++) {
 					title: "Here I Am!"
 				});
 				marker.setMap(map);
-
-
-
-				var marker1 = new google.maps.Marker({
-					//map: map,
-					position: new google.maps.LatLng(42, -71),//(all_stations[i]['Lat'],all_stations[i]['Lng']),
-					title: "asddfgg"
-					//icon:'./T_marker.png'
-				});
-				marker1.setMap(map);
-
-			
-		
 
 
 				// Open info window on click of marker
