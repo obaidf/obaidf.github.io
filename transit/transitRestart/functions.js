@@ -70,7 +70,7 @@ function startTheMap()
 {
 	init();
 	getSched();
-	//draw_polyLines();
+	draw_polyLines();
 
 }
 
@@ -161,10 +161,6 @@ function getSched()
 }
 
 
-
-
-
-
 function draw_polyLines()
 {
 	for (i = 0; i < all_stations.length; i++) {
@@ -185,29 +181,3 @@ function draw_polyLines()
 }
 
 			
-/* from getSched()
-					if (((i + 1) < all_stations.length) && (all_stations[i+1]['Line'] == scheduleData['line'])) {
-						var pathcoords = [
-    						new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
-   							new google.maps.LatLng(all_stations[i+1]['Lat'], all_stations[i+1]['Lng'] )]; // ),]; ????
-    						var T_path = new google.maps.Polyline({
-      								path: pathcoords,
-   									strokeColor: "#FF0000",
-   				   	 				strokeOpacity: 1.0,
-      								strokeWeight: 2
-   					 			});
-    							T_path.setMap(map); 
-							}
-						}	*/
-					
-
-						/*for (a =0; a < markers.length; a++){
-							google.maps.event.addListener(markers[i], 'click', function() {
-								infowindow.setContent(markers[i].title);
-								infowindow.open(map, markers[i]);
-
-								console.log(markers[i].title);
-								//console.log(markers[i].position.Lat);
-							});
-						}*/
-			//}
