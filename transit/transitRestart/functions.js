@@ -69,6 +69,7 @@ var color;
 function startTheMap()
 {
 	init();
+	console.log("About to call getSched");
 	getSched();
 	//draw_polyLines();
 
@@ -76,6 +77,8 @@ function startTheMap()
 
 function init()
 {
+	getMyLocation();
+	console.log("called getMyLocation");
 	var myOptions = {
 		zoom: 13, // The larger the zoom number, the bigger the zoom
 		center: me,
@@ -84,7 +87,6 @@ function init()
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	var infowindow = new google.maps.InfoWindow();
 
-	getMyLocation();
 
 
 }
