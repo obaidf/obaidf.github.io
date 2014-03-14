@@ -92,7 +92,7 @@ function startTheMap()
 
 				//alert(scheduleData['schedule'][0]['Destination']);
 				//draw_stations(scheduleData['line']);
-				color = scheduleData['line']);
+				color = scheduleData['line'];
 				getMyLocation();
 
 
