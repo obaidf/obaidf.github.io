@@ -75,6 +75,11 @@ function startTheMap()
 			init();
 			getSched();
 			
+		function init()
+			{
+				//getMyLocation();
+				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+			}
 
 		function getSched() {
 
@@ -167,12 +172,77 @@ function startTheMap()
 			xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); // this is possible because of cross-origin resource sharing (CORS) enabled for web application
 
 			xhr.send(null); // Go! Execute!
-
-
 		}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 	function draw_stations(color)
 	{
 		for (i = 0; i < all_stations.length; i++) {
@@ -200,11 +270,7 @@ function startTheMap()
 				});
       
 		}
-			function init()
-			{
-				//getMyLocation();
-				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-			}
+			
 
 			function getMyLocation()
 			{
@@ -283,11 +349,11 @@ function startTheMap()
 			
 
 //src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=TRUE";
-/*function initialize(){
+function initialize(){
 	var mapOptions = {
 		zoom: 8
 	};
-	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);*/
+	map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 	
 
