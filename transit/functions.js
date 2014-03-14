@@ -201,7 +201,7 @@ function startTheMap()
 							});
 						}
 			}
-			else if (xhr.readyState == 4 && xhr.status == 500) {
+			if (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
 				scheduleDom.innerHTML = alert("Error retrieving data, please refresh the page.")
 
