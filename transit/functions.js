@@ -131,7 +131,7 @@ function startTheMap()
 
 
 				for (i = 0; i < all_stations.length; i++) {
-							if (all_stations[i]['Line'] == color) {
+							//if (all_stations[i]['Line'] == color) {
 								console.log("finally!");
 								//draw_station(all_stations[i]);
 								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
@@ -141,7 +141,7 @@ function startTheMap()
 								//icon:'./T_marker.png'
 								});
 							marker.setMap(map);
-							}
+							//}
 						}
 
 
