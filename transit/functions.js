@@ -197,7 +197,8 @@ function startTheMap()
 
 
 			for (i = 0; i < all_stations.length; i++) {
-				console.log(color);
+				alert(color);
+				console.log("yeah m n");
 
 				if (((i + 1) < all_stations.length) && (all_stations[i]['Line'] == scheduleData['line']) && (all_stations[i+1]['Line'] == scheduleData['line'])) {
 					var pathcoords = [
