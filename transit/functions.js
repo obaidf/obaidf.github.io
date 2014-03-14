@@ -122,7 +122,7 @@ function draw_stations(color)
 				var marker = new google.maps.Marker({
 					map: map,
 					position: station_loc,
-					icon:'./T_marker.png'
+					//icon:'./T_marker.png'
 				});
 
 				//markers.push(marker);
