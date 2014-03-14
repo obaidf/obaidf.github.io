@@ -69,6 +69,7 @@ function startTheMap()
 			var places;
 			var xhr;
 			var markers = [];
+			var color;
 
 
 			init();
@@ -91,7 +92,8 @@ function startTheMap()
 
 				//alert(scheduleData['schedule'][0]['Destination']);
 				//draw_stations(scheduleData['line']);
-				getMyLocation(scheduleData['line']);
+				color = scheduleData['line']);
+				getMyLocation();
 
 
 
@@ -145,7 +147,7 @@ function startTheMap()
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			}
 
-			function getMyLocation(color)
+			function getMyLocation()
 			{
 				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 					navigator.geolocation.getCurrentPosition(function(position) {
@@ -166,7 +168,7 @@ function startTheMap()
 						marker.setMap(map);
 
 						for (i = 0; i < all_stations.length; i++) {
-							if (all_stations[i]['Line'] == self.color) {
+							if (all_stations[i]['Line'] == color) {
 								console.log("finally!");
 								//draw_station(all_stations[i]);
 								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
