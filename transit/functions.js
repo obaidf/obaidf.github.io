@@ -202,12 +202,13 @@ for (i = 0; i < all_stations.length; i++) {
 
 
 
-for (i = 0; i < all_stations.length; i++) {
+			for (i = 0; i < all_stations.length; i++) {
 				//draw_station(all_stations[i]);
 				var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
 				var marker = new google.maps.Marker({
 					//map: map,
-					position: new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng'])
+					position: new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']),
+					title: "asddfgg"
 					//icon:'./T_marker.png'
 				});
 				marker.setMap(map);
