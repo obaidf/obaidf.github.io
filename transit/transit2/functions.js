@@ -172,9 +172,8 @@ function startTheMap()
     						T_path.setMap(map); 
 						}
 					}	
-				}	
-			
-
+				}
+	
 						/*for (a =0; a < markers.length; a++){
 							google.maps.event.addListener(markers[i], 'click', function() {
 								infowindow.setContent(markers[i].title);
@@ -191,6 +190,7 @@ function startTheMap()
 				scheduleDom.innerHTML = alert("Error retrieving data, please refresh the page.")
 			}
 		};
+
 		
 			xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); // this is possible because of cross-origin resource sharing (CORS) enabled for web application
 			xhr.send(null); // Go! Execute!
