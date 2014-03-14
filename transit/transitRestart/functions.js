@@ -68,10 +68,7 @@ var color;
 
 function startTheMap()
 {
-	alert("Yay!!!!")
-	console.log("startTheMap called");
 	init();
-	console.log("About to call getSched");
 	getSched();
 	//draw_polyLines();
 
@@ -80,7 +77,6 @@ function startTheMap()
 function init()
 {
 	getMyLocation();
-	console.log("called getMyLocation");
 	myOptions = {
 		zoom: 13, // The larger the zoom number, the bigger the zoom
 		center: me,
@@ -88,21 +84,15 @@ function init()
 	};
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	infowindow = new google.maps.InfoWindow();
-
-
-
 }
 
 function getMyLocation()
 {
-	console.log("just got in getMyLocation");
 	if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 		navigator.geolocation.getCurrentPosition(function(position) {
 			myLat = position.coords.latitude;
 			myLng = position.coords.longitude;
-			console.log("About to call renderMap");
 			renderMap();
-			console.log("Rendered map");
 		}); 
 			
 	}
@@ -129,6 +119,52 @@ function renderMap()
 	});
 }
 
+function getSched() 
+{
+	xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			var scheduleData = JSON.parse(xhr.responseText);
+			color = scheduleData['line'];
+
+			markers = [];
+			for (i = 0; i < all_stations.length; i++) {
+					
+				if (all_stations[i]['Line'] == color) {
+					marker1 = new google.maps.Marker({
+						position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']),
+						//icon:'./T_marker.png',
+						title: all_stations[i]['Station']
+					});
+					markers.push(marker1);
+					marker1.setMap(map);
+					markers.push(marker1);
+
+					//add listener
+					google.maps.event.addListener(marker1, 'click', function() {
+					infowindow.setContent(marker1.title);
+					infowindow.open(map, marker1);
+					});
+					console.log(marker1.title);
+					console.log("NANANANANANA");
+				}
+							
+				else if (xhr.readyState == 4 && xhr.status == 500) {
+					scheduleDom = document.getElementById("schedule");
+					scheduleDom.innerHTML = alert("Error retrieving data, please refresh the page.")
+				}
+			}
+		}
+	};
+	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); // this is possible because of cross-origin resource sharing (CORS) enabled for web application
+	xhr.send(null); // Go! Execute!
+}
+
+
+
+
+
+
 function draw_polyLines()
 {
 	for (i = 0; i < all_stations.length; i++) {
@@ -149,3 +185,29 @@ function draw_polyLines()
 }
 
 			
+/* from getSched()
+					if (((i + 1) < all_stations.length) && (all_stations[i+1]['Line'] == scheduleData['line'])) {
+						var pathcoords = [
+    						new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
+   							new google.maps.LatLng(all_stations[i+1]['Lat'], all_stations[i+1]['Lng'] )]; // ),]; ????
+    						var T_path = new google.maps.Polyline({
+      								path: pathcoords,
+   									strokeColor: "#FF0000",
+   				   	 				strokeOpacity: 1.0,
+      								strokeWeight: 2
+   					 			});
+    							T_path.setMap(map); 
+							}
+						}	*/
+					
+
+						/*for (a =0; a < markers.length; a++){
+							google.maps.event.addListener(markers[i], 'click', function() {
+								infowindow.setContent(markers[i].title);
+								infowindow.open(map, markers[i]);
+
+								console.log(markers[i].title);
+								//console.log(markers[i].position.Lat);
+							});
+						}*/
+			//}
