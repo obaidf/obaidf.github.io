@@ -150,8 +150,8 @@ function startTheMap()
 								infowindow.setContent(markers[i].title);
 								infowindow.open(map, markers[i]);
 
-								console.log(title);
-								console.log(position.Lat);
+								console.log(markers[i].title);
+								console.log(markers[i].position.Lat);
 							});
 						}
 
