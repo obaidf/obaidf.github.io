@@ -120,7 +120,7 @@ function draw_stations(color)
 				var station_loc = new google.maps.LatLng(station['Lat'],station['Lng']);
 				var marker = new google.maps.Marker({
 					map: map,
-					position: station_loc;
+					position: station_loc,
 					icon:'./T_marker.png'
 				});
 
