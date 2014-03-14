@@ -164,14 +164,8 @@ function startTheMap()
 						});
 						marker.setMap(map);
 
-						// Open info window on click of marker
-						google.maps.event.addListener(marker, 'click', function() {
-							infowindow.setContent(marker.title);
-							infowindow.open(map, marker);
-						});
-					});
 
-					for (i = 0; i < all_stations.length; i++) {
+						for (i = 0; i < all_stations.length; i++) {
 			if (all_stations[i]['Line'] == color) {
 				//draw_station(all_stations[i]);
 				var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
@@ -184,6 +178,18 @@ function startTheMap()
 
 			}
 		}
+
+						// Open info window on click of marker
+						google.maps.event.addListener(marker, 'click', function() {
+							infowindow.setContent(marker.title);
+							infowindow.open(map, marker);
+						});
+					});
+
+
+
+
+					
 				}
 				else {
 					alert("Geolocation is not supported by your web browser. Upgrade or use a different browser!");
