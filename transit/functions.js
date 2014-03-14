@@ -130,8 +130,6 @@ function startTheMap()
 				}
 				markers = [];
 				for (i = 0; i < all_stations.length; i++) {
-					console.log(scheduleData['line']);
-					console.log(all_stations[i]['Line']);
 							if (all_stations[i]['Line'] == color) {
 								//draw_station(all_stations[i]);
 								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
@@ -159,9 +157,6 @@ function startTheMap()
 								//console.log(markers[i].position.Lat);
 							});
 						}
-
-
-				console.log("Should have drawn stations");
 			}
 			else if (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
