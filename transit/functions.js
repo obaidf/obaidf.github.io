@@ -162,11 +162,19 @@ function startTheMap()
 								title: all_stations[i]['Station']
 								});
 								markers.push(marker1);
-
-							
+	
 							marker1.setMap(map);
 
 							markers.push(marker1);
+
+
+
+
+							google.maps.event.addListener(marker1, 'click', function() {
+								infowindow.setContent(markers[i].title);
+								infowindow.open(map, marker1);
+
+								console.log(markers[i].title);
 
 
 
@@ -192,7 +200,7 @@ function startTheMap()
 
 							}
 						}
-						for (a =0; a < markers.length; a++){
+						/*for (a =0; a < markers.length; a++){
 							google.maps.event.addListener(markers[i], 'click', function() {
 								infowindow.setContent(markers[i].title);
 								infowindow.open(map, markers[i]);
@@ -200,7 +208,7 @@ function startTheMap()
 								console.log(markers[i].title);
 								//console.log(markers[i].position.Lat);
 							});
-						}
+						}*/
 			}
 			if (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
