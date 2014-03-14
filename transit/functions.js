@@ -123,26 +123,26 @@ function startTheMap()
 				else {
 					alert("Geolocation is not supported by your web browser. Upgrade or use a different browser!");
 				}
-
+				markers = [];
 				for (i = 0; i < all_stations.length; i++) {
 					console.log(scheduleData['line']);
 					console.log(all_stations[i]['Line']);
 							if (all_stations[i]['Line'] == color) {
 								//draw_station(all_stations[i]);
 								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
-								var marker = new google.maps.Marker({
+								markers[i] = new google.maps.Marker({
 								//map: map,
 								position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']),
 								//icon:'./T_marker.png',
 								title: all_stations[i]['Station']
 								});
-							marker.setMap(map);
+							markers[i].setMap(map);
 
-							google.maps.event.addListener(marker, 'click', function() {
-					infowindow.setContent(marker.title);
-					infowindow.open(map, marker);
+							google.maps.event.addListener(markers[i], 'click', function() {
+							infowindow.setContent(markers[i].title);
+							infowindow.open(map, markers[i]);
 				});
-							
+
 							}
 						}
 
