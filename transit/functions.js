@@ -133,10 +133,16 @@ function startTheMap()
 								var marker = new google.maps.Marker({
 								//map: map,
 								position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']),
-								icon:'./T_marker.png',
+								//icon:'./T_marker.png',
 								title: all_stations[i]['Station']
 								});
 							marker.setMap(map);
+
+							google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
+							
 							}
 						}
 
