@@ -173,6 +173,7 @@ function startTheMap()
 
 			xhr.send(null); // Go! Execute!
 		}
+	}
 
 
 
