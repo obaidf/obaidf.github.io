@@ -90,6 +90,7 @@ function startTheMap()
 
 				alert(scheduleData['schedule'][0]['Destination']);
 				draw_stations(scheduleData['line']);
+				console.log("Should have drawn stations");
 			}
 			else if (xhr.readyState == 4 && xhr.status == 500) {
 				scheduleDom = document.getElementById("schedule");
