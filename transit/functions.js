@@ -164,15 +164,8 @@ function startTheMap()
 						});
 						marker.setMap(map);
 
-						marker2 = new google.maps.Marker({
-						position: new google.maps.LatLng(41, -72),
-						title: "lolllll"
-						});
-						marker2.setMap(map);
-
-
 						for (i = 0; i < all_stations.length; i++) {
-							if (all_stations[i]['Line'] == color) {
+							//if (all_stations[i]['Line'] == color) {
 								//draw_station(all_stations[i]);
 								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
 								var marker = new google.maps.Marker({
@@ -181,7 +174,7 @@ function startTheMap()
 								//icon:'./T_marker.png'
 								});
 							marker.setMap(map);
-							}
+							//}
 						}
 
 						// Open info window on click of marker
