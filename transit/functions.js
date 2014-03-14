@@ -147,8 +147,6 @@ function startTheMap()
 
 			function getMyLocation(color)
 			{
-
-				console.log(color);
 				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 					navigator.geolocation.getCurrentPosition(function(position) {
 						myLat = position.coords.latitude;
@@ -159,6 +157,7 @@ function startTheMap()
 						// Update map and go there...
 						map.panTo(me);
 
+
 						// Create a marker
 						marker = new google.maps.Marker({
 						position: me,
@@ -167,7 +166,8 @@ function startTheMap()
 						marker.setMap(map);
 
 						for (i = 0; i < all_stations.length; i++) {
-							//if (all_stations[i]['Line'] == color) {
+							if (all_stations[i]['Line'] == self.color) {
+								console.log("finally!");
 								//draw_station(all_stations[i]);
 								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
 								var marker = new google.maps.Marker({
@@ -176,7 +176,7 @@ function startTheMap()
 								//icon:'./T_marker.png'
 								});
 							marker.setMap(map);
-							//}
+							}
 						}
 
 						// Open info window on click of marker
