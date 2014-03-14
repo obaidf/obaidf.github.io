@@ -151,7 +151,7 @@ function startTheMap()
 								infowindow.open(map, markers[i]);
 
 								console.log(markers[i].title);
-								console.log(markers[i].position.Lat);
+								//console.log(markers[i].position.Lat);
 							});
 						}
 
