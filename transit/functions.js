@@ -74,7 +74,7 @@ function startTheMap()
 
 			init();
 			getSched();
-			draw_polyLines();
+			//draw_polyLines();
 
 		function draw_polyLines()
 		{
@@ -182,13 +182,17 @@ function startTheMap()
 				scheduleDom = document.getElementById("schedule");
 				scheduleDom.innerHTML = alert("Error retrieving data, please refresh the page.")
 
-			}
+				}
 			}
 			xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); // this is possible because of cross-origin resource sharing (CORS) enabled for web application
 
 			xhr.send(null); // Go! Execute!
+
+
+						draw_polyLines();
+
 		}
-	}
+}
 
 
 
