@@ -79,6 +79,8 @@ function startTheMap()
 		function draw_polyLines()
 		{
 			for (i = 0; i < all_stations.length; i++) {
+				console.log(color);
+				
 				if (((i + 1) < all_stations.length) && (all_stations[i]['Line'] == color) && (all_stations[i+1]['Line'] == color)) {
 					var pathcoords = [
     					new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
