@@ -70,7 +70,7 @@ function startTheMap()
 {
 	init();
 	getSched();
-	draw_polyLines();
+	//draw_polyLines();
 
 }
 
