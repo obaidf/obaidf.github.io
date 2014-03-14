@@ -197,9 +197,9 @@ function startTheMap()
 
 
 			for (i = 0; i < all_stations.length; i++) {
-				console.log(color);
+				//console.log(color);
 
-				if (((i + 1) < all_stations.length) && (all_stations[i]['Line'] == color) && (all_stations[i+1]['Line'] == color)) {
+				if (((i + 1) < all_stations.length) && (all_stations[i]['Line'] == scheduleData['line']) && (all_stations[i+1]['Line'] == scheduleData['line'])) {
 					var pathcoords = [
     					new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
    						new google.maps.LatLng(all_stations[i+1]['lat1'], all_stations[i+1]['lng1'] ),];
