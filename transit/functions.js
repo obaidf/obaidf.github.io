@@ -130,20 +130,20 @@ function startTheMap()
 							if (all_stations[i]['Line'] == color) {
 								//draw_station(all_stations[i]);
 								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
-								marker = new google.maps.Marker({
+								marker1 = new google.maps.Marker({
 								//map: map,
 								position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']),
 								//icon:'./T_marker.png',
 								title: all_stations[i]['Station']
 								});
-								markers.push(marker);
-							marker.setMap(map);
+								markers.push(marker1);
+							marker1.setMap(map);
 
-							google.maps.event.addListener(marker, 'click', function() {
-							infowindow.setContent(marker.title);
-							infowindow.open(map, marker);
+							google.maps.event.addListener(marker1, 'click', function() {
+							infowindow.setContent(marker1.title);
+							infowindow.open(map, marker1);
 				});
-							markers.push(marker);
+							markers.push(marker1);
 
 							}
 						}
