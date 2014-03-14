@@ -181,6 +181,8 @@ function startTheMap()
    				   	 				strokeOpacity: 1.0,
       								strokeWeight: 2
    					 				});
+
+    							console.log(all_stations[i+1]['lat1']); 
     							T_path.setMap(map); 
 							}
 						}
