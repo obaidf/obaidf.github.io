@@ -142,10 +142,10 @@ function getSched()
 
 					//add listener
 					google.maps.event.addListener(marker1, 'click', function() {
-					infowindow.setContent(marker1.title);
-					infowindow.open(map, marker1);
+					infowindow.setContent(markers[i].title);
+					infowindow.open(map, markers[i]);
 					});
-					console.log(marker1.title);
+					console.log(markers[i].title);
 				}
 							
 				else if (xhr.readyState == 4 && xhr.status == 500) {
