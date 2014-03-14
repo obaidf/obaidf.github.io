@@ -176,12 +176,12 @@ function startTheMap()
     								new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
    									new google.maps.LatLng(all_stations[i+1]['lat1'], all_stations[i+1]['lng1'] ),];
     							var T_path = new google.maps.Polyline({
-      							path: pathcoords,
-   								strokeColor: "#FF0000",
-   				   	 			strokeOpacity: 1.0,
-      							strokeWeight: 2
-   					 			});
-    						T_Path.setMap(map); 
+      								path: pathcoords,
+   									strokeColor: "#FF0000",
+   				   	 				strokeOpacity: 1.0,
+      								strokeWeight: 2
+   					 				});
+    							T_path.setMap(map); 
 							}
 						}
 
