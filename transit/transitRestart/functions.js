@@ -56,10 +56,10 @@ var myLat = 0;
 var myLng = 0;
 var request = new XMLHttpRequest();
 var me; 
-//var myOptions
+var myOptions
 var map;
 var marker;
-//var infoWindow;
+var infowindow;
 var places;
 var xhr;
 var markers = [];
@@ -81,13 +81,13 @@ function init()
 {
 	getMyLocation();
 	console.log("called getMyLocation");
-	var myOptions = {
+	myOptions = {
 		zoom: 13, // The larger the zoom number, the bigger the zoom
 		center: me,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-	var infowindow = new google.maps.InfoWindow();
+	infowindow = new google.maps.InfoWindow();
 
 
 
@@ -103,37 +103,6 @@ function getMyLocation()
 			console.log("About to call renderMap");
 			renderMap();
 			console.log("Rendered map");
-			
-			/*me = new google.maps.LatLng(myLat, myLng);
-			// Update map and go there...
-			map.panTo(me);
-
-			// Create a marker
-			marker = new google.maps.Marker({
-				position: me,
-				title: "Here I Am!"
-			});
-			marker.setMap(map);
-
-			for (i = 0; i < all_stations.length; i++) {
-				if (all_stations[i]['Line'] == color) {
-					console.log("finally!");
-					//draw_station(all_stations[i]);
-					//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
-					var marker = new google.maps.Marker({
-						//map: map,
-						position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng'])
-						//icon:'./T_marker.png'
-					});
-					marker.setMap(map);
-				}
-			}
-
-			// Open info window on click of marker
-			google.maps.event.addListener(marker, 'click', function() {
-				infowindow.setContent(marker.title);
-				infowindow.open(map, marker);
-			});*/
 		}); 
 			
 	}
@@ -145,9 +114,8 @@ function getMyLocation()
 function renderMap()
 {
 	me = new google.maps.LatLng(myLat, myLng);
-	// Update map and go there...
 	map.panTo(me);
-	// Create a marker
+
 	marker = new google.maps.Marker({
 		position: me,
 		title: "Here I Am!"
