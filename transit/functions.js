@@ -77,7 +77,6 @@ function startTheMap()
 
 		function getSched() {
 
-			getMyLocation();
 			xhr = new XMLHttpRequest();
 
 			// onreadystatechange has to be set to a...
@@ -92,20 +91,9 @@ function startTheMap()
 
 				//alert(scheduleData['schedule'][0]['Destination']);
 				//draw_stations(scheduleData['line']);
+				getMyLocation(scheduleData['line']);
 
-for (i = 0; i < all_stations.length; i++) {
-			if (all_stations[i]['Line'] == scheduleData['line']) {
-				//draw_station(all_stations[i]);
-				var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
-				var marker = new google.maps.Marker({
-					//map: map,
-					position: station_loc
-					//icon:'./T_marker.png'
-				});
-				marker.setMap(map);
 
-			}
-		}
 
 				console.log("Should have drawn stations");
 			}
@@ -157,7 +145,7 @@ for (i = 0; i < all_stations.length; i++) {
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			}
 
-			function getMyLocation()
+			function getMyLocation(color)
 			{
 				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 					navigator.geolocation.getCurrentPosition(function(position) {
@@ -182,6 +170,20 @@ for (i = 0; i < all_stations.length; i++) {
 							infowindow.open(map, marker);
 						});
 					});
+
+					for (i = 0; i < all_stations.length; i++) {
+			if (all_stations[i]['Line'] == color) {
+				//draw_station(all_stations[i]);
+				var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
+				var marker = new google.maps.Marker({
+					//map: map,
+					position: station_loc
+					//icon:'./T_marker.png'
+				});
+				marker.setMap(map);
+
+			}
+		}
 				}
 				else {
 					alert("Geolocation is not supported by your web browser. Upgrade or use a different browser!");
