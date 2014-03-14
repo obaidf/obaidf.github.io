@@ -68,6 +68,7 @@ var color;
 
 function startTheMap()
 {
+	console.log("startTheMap called");
 	init();
 	console.log("About to call getSched");
 	getSched();
