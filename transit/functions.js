@@ -199,7 +199,8 @@ function startTheMap()
 
 
 							
-						}
+						//}} ?
+
 						/*for (a =0; a < markers.length; a++){
 							google.maps.event.addListener(markers[i], 'click', function() {
 								infowindow.setContent(markers[i].title);
