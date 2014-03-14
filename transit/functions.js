@@ -137,7 +137,7 @@ function startTheMap()
 								title: all_stations[i]['Station']
 								});
 								markers.push(marker1);
-							//marker1.setMap(map);
+							marker1.setMap(map);
 
 							google.maps.event.addListener(marker1, 'click', function() {
 							infowindow.setContent(marker1.title);
@@ -146,11 +146,9 @@ function startTheMap()
 							markers.push(marker1);
 
 							}
-					}
-					for (f = 0; f < markers.length; f++){
-						markers[i].setMap(map);
-					}
- 
+						}
+
+
 				console.log("Should have drawn stations");
 			}
 			else if (xhr.readyState == 4 && xhr.status == 500) {
