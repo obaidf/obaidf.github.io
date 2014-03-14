@@ -93,8 +93,54 @@ function startTheMap()
 				//alert(scheduleData['schedule'][0]['Destination']);
 				//draw_stations(scheduleData['line']);
 				color = scheduleData['line'];
-				getMyLocation();
 
+				if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+					navigator.geolocation.getCurrentPosition(function(position) {
+						myLat = position.coords.latitude;
+						myLng = position.coords.longitude;
+						//renderMap();
+						me = new google.maps.LatLng(myLat, myLng);
+
+						// Update map and go there...
+						map.panTo(me);
+
+
+						// Create a marker
+						marker = new google.maps.Marker({
+						position: me,
+						title: "Here I Am!"
+						});
+						marker.setMap(map);
+
+						for (i = 0; i < all_stations.length; i++) {
+							if (all_stations[i]['Line'] == color) {
+								console.log("finally!");
+								//draw_station(all_stations[i]);
+								//var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
+								var marker = new google.maps.Marker({
+								//map: map,
+								position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng'])
+								//icon:'./T_marker.png'
+								});
+							marker.setMap(map);
+							}
+						}
+
+						// Open info window on click of marker
+						google.maps.event.addListener(marker, 'click', function() {
+							infowindow.setContent(marker.title);
+							infowindow.open(map, marker);
+						});
+					});
+
+
+
+
+					
+				}
+				else {
+					alert("Geolocation is not supported by your web browser. Upgrade or use a different browser!");
+				}
 
 
 				console.log("Should have drawn stations");
