@@ -149,6 +149,9 @@ function startTheMap()
 							google.maps.event.addListener(markers[i], 'click', function() {
 								infowindow.setContent(markers[i].title);
 								infowindow.open(map, markers[i]);
+
+								console.log(title);
+								console.log(position.Lat);
 							});
 						}
 
