@@ -70,7 +70,7 @@ function startTheMap()
 {
 	init();
 	getSched();
-	//draw_polyLines();
+	draw_polyLines();
 
 }
 
@@ -159,10 +159,6 @@ function getSched()
 	xhr.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true); // this is possible because of cross-origin resource sharing (CORS) enabled for web application
 	xhr.send(null); // Go! Execute!
 }
-
-
-
-
 
 
 function draw_polyLines()
