@@ -145,7 +145,7 @@ function getSched()
 					infowindow.setContent(markers[i].title);
 					infowindow.open(map, markers[i]);
 					});
-					console.log(markers[i].title);
+					console.log(markers[i]['title']);
 				}
 							
 				else if (xhr.readyState == 4 && xhr.status == 500) {
