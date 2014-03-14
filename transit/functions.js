@@ -174,7 +174,7 @@ function startTheMap()
 							if (((i + 1) < all_stations.length) && (all_stations[i+1]['Line'] == scheduleData['line'])) {
 								var pathcoords = [
     								new google.maps.LatLng(all_stations[i]['Lat'], all_stations[i]['Lng'] ),
-   									new google.maps.LatLng(all_stations[i+1]['lat1'], all_stations[i+1]['lng1'] ),];
+   									new google.maps.LatLng(all_stations[i+1]['Lat'], all_stations[i+1]['Lng'] ),];
     							var T_path = new google.maps.Polyline({
       								path: pathcoords,
    									strokeColor: "#FF0000",
@@ -182,7 +182,7 @@ function startTheMap()
       								strokeWeight: 2
    					 				});
 
-    							console.log(all_stations[i+1]['lat1']); 
+    							console.log(all_stations[i]['Lat']); 
     							T_path.setMap(map); 
 							}
 						}
