@@ -4,7 +4,7 @@ all_stations = [{"Line":"blue","Station":"Wonderland","Lat":42.41342,"Lng":-70.9
 {"Line":"blue","Station":"Suffolk Downs","Lat":42.39050067,"Lng":-70.99712259},
 {"Line":"blue","Station":"Orient Heights","Lat":42.386867,"Lng":-71.004736},
 {"Line":"blue","Station":"Wood Island","Lat":42.3796403,"Lng":-71.02286539},
-{"Line":"Blue","Station":"Airport","Lat":42.374262,"Lng":-71.030395},
+{"Line":"blue","Station":"Airport","Lat":42.374262,"Lng":-71.030395},
 {"Line":"blue","Station":"Maverick","Lat":42.36911856,"Lng":-71.03952958},
 {"Line":"blue","Station":"Aquarium","Lat":42.359784,"Lng":-71.051652},
 {"Line":"blue","Station":"State Street","Lat":42.358978,"Lng":-71.057598},
