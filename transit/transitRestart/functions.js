@@ -131,7 +131,7 @@ function getSched()
 			for (i = 0; i < all_stations.length; i++) {
 					
 				if (all_stations[i]['Line'] == color) {
-					marker1 = new google.maps.Marker({
+					var marker1 = new google.maps.Marker({
 						position:  new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']),
 						//icon:'./T_marker.png',
 						title: all_stations[i]['Station']
@@ -146,7 +146,6 @@ function getSched()
 					infowindow.open(map, marker1);
 					});
 					console.log(marker1.title);
-					console.log("NANANANANANA");
 				}
 							
 				else if (xhr.readyState == 4 && xhr.status == 500) {
