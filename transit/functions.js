@@ -88,8 +88,21 @@ function startTheMap()
 				//scheduleDom = document.getElementById("schedule");
 				//scheduleDom.innerHTML = scheduleData["line"];
 
-				alert(scheduleData['schedule'][0]['Destination']);
-				draw_stations(scheduleData['line']);
+				//alert(scheduleData['schedule'][0]['Destination']);
+				//draw_stations(scheduleData['line']);
+
+for (i = 0; i < all_stations.length; i++) {
+			if (all_stations[i]['Line'] == scheduleData['line']) {
+				//draw_station(all_stations[i]);
+				var station_loc = new google.maps.LatLng(all_stations[i]['Lat'],all_stations[i]['Lng']);
+				var marker = new google.maps.Marker({
+					map: map,
+					position: station_loc,
+					//icon:'./T_marker.png'
+				});
+			}
+		}
+
 				console.log("Should have drawn stations");
 			}
 			else if (xhr.readyState == 4 && xhr.status == 500) {
@@ -107,14 +120,14 @@ function startTheMap()
 
 
 
-function draw_stations(color)
-{
-	for (i = 0; i < all_stations.length; i++) {
-		if (all_stations[i]['Line'] == color) {
-			draw_station(all_stations[i]);
+	function draw_stations(color)
+	{
+		for (i = 0; i < all_stations.length; i++) {
+			if (all_stations[i]['Line'] == color) {
+				draw_station(all_stations[i]);
+			}
 		}
 	}
-}
 
 		function draw_station(station)
 		{
