@@ -175,6 +175,7 @@ function startTheMap()
 								infowindow.open(map, marker1);
 
 								console.log(markers[i].title);
+								console.log("NANANANANANA");
 
 
 
@@ -189,7 +190,6 @@ function startTheMap()
       								strokeWeight: 2
    					 				});
 
-    							console.log(all_stations[i]['Lat']); 
     							T_path.setMap(map); 
 							}
 						}
@@ -198,7 +198,7 @@ function startTheMap()
 
 
 
-							}
+							
 						}
 						/*for (a =0; a < markers.length; a++){
 							google.maps.event.addListener(markers[i], 'click', function() {
