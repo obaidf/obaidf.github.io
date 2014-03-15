@@ -72,6 +72,8 @@ function startTheMap()
 	getSched();
 	//draw_polyLines();
 
+	alert(markers[0].title);
+
 }
 
 function init()
@@ -142,8 +144,8 @@ function getSched()
 
 					//add listener
 					google.maps.event.addListener(marker1, 'click', function() {
-					infowindow.setContent(marker1.title);
-					infowindow.open(map, marker1);
+						infowindow.setContent(marker1.title);
+						infowindow.open(map, marker1);
 					});
 					console.log(marker1.title);
 					console.log("NANANANANANA");
