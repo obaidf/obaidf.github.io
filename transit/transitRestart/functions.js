@@ -149,7 +149,7 @@ function getSched()
 
 					infowindows[i] = new google.maps.InfoWindow();
 					if (infowindows[i] == NULL) {
-						console.log(infowindows is NULLL);
+						console.log("infowindows is NULLL");
 					}
 
 					google.maps.event.addListener(marker1, 'click', function() {
