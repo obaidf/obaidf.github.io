@@ -59,12 +59,12 @@ var me;
 var myOptions
 var map;
 var marker;
-var infowindow;
+var infowindows = []; 
 var places;
 var xhr;
 var markers = [];
 var color;  
-
+var IAmHere;
 
 function startTheMap()
 {
@@ -72,7 +72,7 @@ function startTheMap()
 	getSched();
 	//draw_polyLines();
 
-	alert(markers[0].title);
+	alert(markers[0]['title']);
 
 }
 
@@ -85,7 +85,7 @@ function init()
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-	infowindow = new google.maps.InfoWindow();
+	//infowindow = new google.maps.InfoWindow();
 }
 
 function getMyLocation()
@@ -115,9 +115,12 @@ function renderMap()
 	marker.setMap(map);
 
 	// Open info window on click of marker
+
+	IAmHere = new google.maps.InfoWindow();
+
 	google.maps.event.addListener(marker, 'click', function() {
-		infowindow.setContent(marker.title);
-		infowindow.open(map, marker);
+		IAmHere.setContent(marker.title);
+		IAmHere.open(map, marker);
 	});
 }
 
@@ -143,12 +146,13 @@ function getSched()
 					markers.push(marker1);
 
 					//add listener
+
+					infowindows[i] = new google.maps.InfoWindow();
+
 					google.maps.event.addListener(marker1, 'click', function() {
-						infowindow.setContent(marker1.title);
-						infowindow.open(map, marker1);
+						infowindows[i].setContent(marker1.title);
+						infowindows[i].open(map, marker1);
 					});
-					console.log(marker1.title);
-					console.log("NANANANANANA");
 				}
 							
 				else if (xhr.readyState == 4 && xhr.status == 500) {
