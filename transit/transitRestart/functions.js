@@ -71,9 +71,6 @@ function startTheMap()
 	init();
 	getSched();
 	//draw_polyLines();
-
-	alert(markers[0]['title']);
-
 }
 
 function init()
@@ -147,14 +144,11 @@ function getSched()
 
 					//add listener
 
-					infowindows[i] = new google.maps.InfoWindow();
-					if (infowindows[i] == NULL) {
-						console.log("infowindows is NULLL");
-					}
+					var infowindow = new google.maps.InfoWindow();
 
 					google.maps.event.addListener(marker1, 'click', function() {
-						infowindows[i].setContent(marker1.title);
-						infowindows[i].open(map, marker1);
+						infowindow.setContent(marker1.title);
+						infowindow.open(map, marker1);
 					});
 				}
 							
