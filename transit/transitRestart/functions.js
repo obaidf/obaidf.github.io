@@ -90,8 +90,8 @@ function getMyLocation()
 {
 	if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
 		navigator.geolocation.getCurrentPosition(function(position) {
-			myLat = position.coords.latitude;
-			myLng = position.coords.longitude;
+			myLat = 42.3736;//position.coords.latitude;
+			myLng = -71.1189;//position.coords.longitude;
 			renderMap();
 		}); 
 			
